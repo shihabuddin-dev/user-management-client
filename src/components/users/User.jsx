@@ -1,8 +1,10 @@
 import React from "react";
 import { MdDeleteForever, MdEdit } from "react-icons/md";
+import { useNavigate } from "react-router";
 
 const User = ({ user, i, handleDeleteUser }) => {
   const { _id, name, email, gender, status } = user || {};
+  const navigate = useNavigate();
 
   return (
     <tr className="hover:bg-indigo-50">
@@ -13,7 +15,10 @@ const User = ({ user, i, handleDeleteUser }) => {
       <td className="border-b-1">{status}</td>
       <td className="border-b-1">
         <div className="space-x-1">
-          <button className="btn btn-xs bg-indigo-50 hover:bg-white shadow-2xl">
+          <button
+            onClick={() => navigate(`/editUser/${_id}`)}
+            className="btn btn-xs bg-indigo-50 hover:bg-white shadow-2xl"
+          >
             <MdEdit className="text-indigo-500 text-lg" />
           </button>
           <button

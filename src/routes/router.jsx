@@ -3,6 +3,7 @@ import Root from "../layout/Root";
 import Home from "../pages/home/Home";
 import Spinner from "../components/ui/Spinner";
 import AddUser from "../components/UserActions/AddUser";
+import EditUser from "../components/UserActions/EditUser";
 
 const router = createBrowserRouter([
   {
@@ -16,9 +17,16 @@ const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: '/addUser',
-        Component: AddUser
-      }
+        path: "/addUser",
+        Component: AddUser,
+      },
+      {
+        path: "/editUser/:id",
+        hydrateFallbackElement: <Spinner />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/users/${params.id}`),
+        Component: EditUser,
+      },
     ],
   },
 ]);
