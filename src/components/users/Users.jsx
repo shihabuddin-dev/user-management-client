@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import Button from "../ui/Button";
-import { FaUser } from "react-icons/fa";
+import { FaUserPlus } from "react-icons/fa";
 import { useLoaderData, useNavigate } from "react-router";
 import User from "./User";
 import Swal from "sweetalert2";
+import EmptyUser from "./EmptyUser";
 
 const Users = () => {
   const initialUsers = useLoaderData();
   const [users, setUsers] = useState(initialUsers);
   const navigate = useNavigate();
+
+  if (users.length === 0) {
+    return <EmptyUser />
+  }
 
   // delete user
   const handleDeleteUser = (id) => {
@@ -22,7 +27,9 @@ const Users = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://user-management-server-coral.vercel.app/users/${id}`, { method: "DELETE" })
+        fetch(`https://user-management-server-coral.vercel.app/users/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
@@ -47,7 +54,7 @@ const Users = () => {
         variant="outline"
         className="flex items-center gap-1"
       >
-        New User <FaUser />
+        Add User <FaUserPlus />
       </Button>
       <div className="overflow-x-auto mt-6">
         <table className="table">

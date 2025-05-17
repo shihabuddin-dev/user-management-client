@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FaAngleDoubleLeft } from "react-icons/fa";
-import { Link } from "react-router"; // Assuming react-router-dom
+import { FaAngleDoubleLeft, FaUserPlus } from "react-icons/fa";
+import { Link } from "react-router";
 import Swal from "sweetalert2";
 
 const AddUser = () => {
@@ -29,6 +29,8 @@ const AddUser = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        setName("");
+        setEmail("");
       });
   };
 
@@ -40,14 +42,17 @@ const AddUser = () => {
     <div className="p-4 md:p-8">
       <Link
         to="/"
-        className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800 font-medium mb-6"
+        className="text-xl inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800 font-medium mb-6"
       >
         <FaAngleDoubleLeft /> All User
       </Link>
 
       <div className=" bg-white p-6 md:p-8 rounded-lg shadow-md border border-indigo-100">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-semibold text-slate-700">New User</h1>
+          <h1 className="text-3xl font-semibold text-slate-700 flex justify-center items-center gap-1">
+            <FaUserPlus />
+            New User
+          </h1>
           <p className="text-slate-500 mt-2">
             Use the below form to create a new account
           </p>

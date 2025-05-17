@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaAngleDoubleLeft } from "react-icons/fa";
+import { FaAngleDoubleLeft, FaUserEdit } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 
@@ -14,13 +14,16 @@ const EditUser = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
     const updateInfo = { name, email, gender, status };
-    fetch(`https://user-management-server-coral.vercel.app/users/${user?._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateInfo),
-    })
+    fetch(
+      `https://user-management-server-coral.vercel.app/users/${user?._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
@@ -42,14 +45,16 @@ const EditUser = () => {
     <div className="p-4 md:p-8">
       <Link
         to="/"
-        className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800 font-medium mb-6"
+        className="text-xl inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800 font-medium mb-6"
       >
         <FaAngleDoubleLeft /> All User
       </Link>
 
       <div className=" bg-white p-6 md:p-8 rounded-lg shadow-md border border-indigo-100">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-semibold text-slate-700">Edit User</h1>
+          <h1 className="text-3xl font-semibold text-slate-700 flex justify-center items-center gap-1">
+            <FaUserEdit /> Edit User
+          </h1>
         </div>
 
         <form onSubmit={handleUpdate} className="space-y-6">
