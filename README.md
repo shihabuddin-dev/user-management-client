@@ -7,8 +7,8 @@ A modern user management web application built with React, Tailwind CSS, and oth
 ## 🔗 Links
 
 - **Live Demo**: [https://user-management-client-site.netlify.app/](https://user-management-client-site.netlify.app/)
-- **GitHub Repository**: [https://github.com/shihabuddin-dev/user-management-client](https://github.com/shihabuddin-dev/user-management-client)
-- **Developer Contact**: [Shihab Uddin on LinkedIn](https://www.linkedin.com/in/shihabuddinreal)
+- **GitHub Repository(Client)**: [https://github.com/shihabuddin-dev/user-management-client](https://github.com/shihabuddin-dev/user-management-client)
+- **GitHub Repository(Server)**: [https://github.com/shihabuddin-dev/user-management-server](https://github.com/shihabuddin-dev/user-management-server)
 
 ## ✨ Features
 
