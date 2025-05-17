@@ -8,27 +8,7 @@ const router = createBrowserRouter([
         Component: Root,
         children: [
             { index: true, Component: Home },
-            // { path: '/signin', Component: SignIn },
-            // { path: '/signup', Component: SignUp },
-            // { path: '/about', Component: About },
-            // { path: '/blogs', Component: Blogs },
-
-            // private routes 
-            
-            // {
-            //     path: '/profile',
-            //     element:
-            //         <PrivateRoutes>
-            //             <Profile />
-            //         </PrivateRoutes>
-            // },
-            // {
-            //     path: '/news',
-            //     element:
-            //         <PrivateRoutes>
-            //             <News />
-            //         </PrivateRoutes>
-            // },
+          
         ]
     },
 ]);

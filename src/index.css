@@ -1,10 +1,10 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 a.active {
-    color: red;
-  }
-  a.pending {
-    color: blue;
-  }
- 
-  
+  color: red;
+}
+
+a.pending {
+  color: blue;
+}
