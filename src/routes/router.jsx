@@ -13,7 +13,7 @@ const router = createBrowserRouter([
       {
         index: true,
         hydrateFallbackElement: <Spinner />,
-        loader: () => fetch("http://localhost:3000/users"),
+        loader: () => fetch("https://user-management-server-coral.vercel.app/users"),
         Component: Home,
       },
       {
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         path: "/editUser/:id",
         hydrateFallbackElement: <Spinner />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/users/${params.id}`),
+          fetch(`https://user-management-server-coral.vercel.app/users/${params.id}`),
         Component: EditUser,
       },
     ],

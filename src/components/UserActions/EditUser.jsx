@@ -14,7 +14,7 @@ const EditUser = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
     const updateInfo = { name, email, gender, status };
-    fetch(`http://localhost:3000/users/${user?._id}`, {
+    fetch(`https://user-management-server-coral.vercel.app/users/${user?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

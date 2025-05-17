@@ -13,7 +13,7 @@ const AddUser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const userInfo = { name, email, gender, status };
-    fetch("http://localhost:3000/users", {
+    fetch("https://user-management-server-coral.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
